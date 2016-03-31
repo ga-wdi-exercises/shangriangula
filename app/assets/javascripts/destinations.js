@@ -15,7 +15,12 @@
     "$stateProvider",
     RouterFunction
   ])
+  .factory("Destination", [
+    "$resource",
+    destFactoryFunction
+  ])
   .controller("indexCtrl", [
+    "Destination",
     indexCtrlFunction
   ]);
 
@@ -32,9 +37,17 @@
     });
   }
 
-  function indexCtrlFunction(){
+  function destFactoryFunction($resource){
+    var Destination = $resource("/destinations/:id.json", {}, {
+      update: {method: "PUT"}
+    });
+    Destination.all = Destination.query();
+    return Destination;
+  }
+
+  function indexCtrlFunction(Destination){
     var indexVM = this;
-    indexVM.foo = "bar";
+    indexVM.destinations = Destination.all;
   }
 
 })();
