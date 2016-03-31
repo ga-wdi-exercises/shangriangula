@@ -22,6 +22,10 @@
   .controller("indexCtrl", [
     "Destination",
     indexCtrlFunction
+  ])
+  .directive("destinationForm", [
+    "Destination",
+    destFormFunction
   ]);
 
   function RouterFunction($stateProvider){
@@ -48,6 +52,12 @@
   function indexCtrlFunction(Destination){
     var indexVM = this;
     indexVM.destinations = Destination.all;
+  }
+
+  function destFormFunction(Destination){
+    return{
+      templateUrl: "ng-views/destination.form.html"
+    }
   }
 
 })();

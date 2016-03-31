@@ -1,0 +1,14 @@
+<h2>Add your destination</h2>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="destination.name" id="name" />
+  <label for="name">Name</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="destination.description" id="description" />
+  <label for="description">Description</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="destination.image_url" id="image_url" />
+  <label for="image_url">Image URL</label>
+</fieldset>
+<button type="button" class="btn btn-primary btn-block" data-ng-click="destination.create()">Submit</button>
