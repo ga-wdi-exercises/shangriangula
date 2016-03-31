@@ -1,11 +1,11 @@
 <%= stylesheet_link_tag "destinations", property: :stylesheet %>
 <%= javascript_include_tag "destinations" %>
 
-<div class="container">
-  <header class="jumbotron">
-    <h1>Shangri-Angu-La</h1>
+<div class="container" data-ng-app="shangriangula">
+  <header class="page-header">
+    <h1><a data-ui-sref="index" href="#">Shangri-Angu-La</a></h1>
   </header>
-  <main>
+  <main data-ui-view>
 
   </main>
 </div>
