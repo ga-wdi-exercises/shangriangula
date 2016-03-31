@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Destination.destroy_all
+Destination.create!(JSON.parse(File.read("db/destination_seeds.json")))

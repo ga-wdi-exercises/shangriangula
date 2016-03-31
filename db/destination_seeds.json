@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Atlantis",
+    "description": "Pack your swim trunks!",
+    "image_url": "http://i.imgur.com/6814H3i.jpg"
+  },
+  {
+    "name": "Shambhala",
+    "description": "29 out of 29 Buddhas give it 2 thumbs up!",
+    "image_url": "http://i.imgur.com/rgo4zxq.jpg"
+  },
+  {
+    "name": "El Dorado",
+    "description": "Glory, gold, and assorted gods!",
+    "image_url": "http://i.imgur.com/rOIojSR.jpg"
+  },
+  {
+    "name": "Valhalla",
+    "description": "Ragnarok and roll all night!",
+    "image_url": "http://i.imgur.com/ljfTWcy.jpg"
+  }
+]
