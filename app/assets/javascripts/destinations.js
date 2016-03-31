@@ -23,6 +23,11 @@
     "Destination",
     indexCtrlFunction
   ])
+  .controller("showCtrl", [
+    "Destination",
+    "$stateParams",
+    showCtrlFunction
+  ])
   .directive("destinationForm", [
     "Destination",
     destFormFunction
@@ -37,7 +42,10 @@
       controllerAs: "indexVM"
     })
     .state("show", {
-      url: "/:id"
+      url: "/:id",
+      templateUrl: "ng-views/destination.show.html",
+      controller: "showCtrl",
+      controllerAs: "showVM"
     });
   }
 
@@ -53,6 +61,17 @@
     var indexVM = this;
     indexVM.destinations = Destination.all;
     indexVM.newDestination = new Destination();
+  }
+
+  function showCtrlFunction(Destination, $stateParams){
+    var showVM = this;
+    Destination.all.$promise.then(function(){
+      Destination.all.forEach(function(destination){
+        if(destination.id == $stateParams.id){
+          showVM.destination = destination;
+        }
+      });
+    });
   }
 
   function destFormFunction(Destination){
