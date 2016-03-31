@@ -1,4 +1,7 @@
-<h2>Add your destination</h2>
+<div data-ng-switch="formMethod">
+  <h2 data-ng-switch-when="edit">Edit this destination</h2>
+  <h2 data-ng-switch-default>Add your destination</h2>
+</div>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="destination.name" id="name" />
   <label for="name">Name</label>
@@ -11,4 +14,7 @@
   <input type="text" class="form-control" data-ng-model="destination.image_url" id="image_url" />
   <label for="image_url">Image URL</label>
 </fieldset>
-<button type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
+<div data-ng-switch="formMethod">
+  <button data-ng-switch-when="edit" type="button" class="btn btn-primary btn-block" data-ng-click="update()">Edit</button>
+  <button data-ng-switch-default type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
+</div>

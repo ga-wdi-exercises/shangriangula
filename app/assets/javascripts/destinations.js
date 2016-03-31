@@ -78,12 +78,18 @@
     return{
       templateUrl: "ng-views/destination.form.html",
       scope: {
-        destination: "="
+        destination:  "=",
+        formMethod:   "@"
       },
       link: function(scope){
         scope.create = function(){
           Destination.save(scope.destination, function(response){
             Destination.all.push(response);
+          });
+        }
+        scope.update = function(){
+          Destination.update({id: scope.destination.id}, scope.destination, function(response){
+            console.log("Successful");
           });
         }
       }
