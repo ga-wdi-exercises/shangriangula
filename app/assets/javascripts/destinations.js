@@ -52,11 +52,22 @@
   function indexCtrlFunction(Destination){
     var indexVM = this;
     indexVM.destinations = Destination.all;
+    indexVM.newDestination = new Destination();
   }
 
   function destFormFunction(Destination){
     return{
-      templateUrl: "ng-views/destination.form.html"
+      templateUrl: "ng-views/destination.form.html",
+      scope: {
+        destination: "="
+      },
+      link: function(scope){
+        scope.create = function(){
+          Destination.save(scope.destination, function(response){
+            Destination.all.push(response);
+          });
+        }
+      }
     }
   }
 
